@@ -20,13 +20,15 @@ function createServer() {
       });
     }
 
+    const normalizedToCase = toCase.toUpperCase();
+
     if (!toCase) {
       errors.push({
         message:
           '"toCase" query param is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
       });
     } else {
-      if (!CASES.includes(toCase)) {
+      if (!CASES.includes(normalizedToCase)) {
         errors.push({
           message:
             'This case is not supported. Available cases: SNAKE, KEBAB, CAMEL, PASCAL, UPPER.',
