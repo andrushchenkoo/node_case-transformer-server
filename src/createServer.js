@@ -49,6 +49,7 @@ function createServer() {
       requestedPath,
       toCase,
     );
+
     const responseData = {
       originalCase,
       targetCase: toCase,
